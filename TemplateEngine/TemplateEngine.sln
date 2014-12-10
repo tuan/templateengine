@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateEngine", "TemplateE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateEngine.Tests", "TemplateEngine.Tests\TemplateEngine.Tests.csproj", "{51334FE9-47EB-4B3B-A255-F3CA37B2A282}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHostTemplateEngine", "SelfHostTemplateEngine\SelfHostTemplateEngine.csproj", "{82287223-BA11-427A-879C-C1D99EF686D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{51334FE9-47EB-4B3B-A255-F3CA37B2A282}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51334FE9-47EB-4B3B-A255-F3CA37B2A282}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51334FE9-47EB-4B3B-A255-F3CA37B2A282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82287223-BA11-427A-879C-C1D99EF686D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82287223-BA11-427A-879C-C1D99EF686D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82287223-BA11-427A-879C-C1D99EF686D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82287223-BA11-427A-879C-C1D99EF686D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
