@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetTemplateEngine.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateEngine", "TemplateEngine\TemplateEngine.csproj", "{531F553B-10F7-4D66-B397-9AE2E6D9962A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateEngine.Tests", "TemplateEngine.Tests\TemplateEngine.Tests.csproj", "{51334FE9-47EB-4B3B-A255-F3CA37B2A282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{531F553B-10F7-4D66-B397-9AE2E6D9962A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{531F553B-10F7-4D66-B397-9AE2E6D9962A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{531F553B-10F7-4D66-B397-9AE2E6D9962A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51334FE9-47EB-4B3B-A255-F3CA37B2A282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51334FE9-47EB-4B3B-A255-F3CA37B2A282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51334FE9-47EB-4B3B-A255-F3CA37B2A282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51334FE9-47EB-4B3B-A255-F3CA37B2A282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
