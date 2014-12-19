@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Owin;
 using Owin;
+using TemplateEngine.Security;
 
 [assembly: OwinStartup(typeof(TemplateEngine.Startup))]
 
@@ -19,6 +20,10 @@ namespace TemplateEngine
         {
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
             HttpConfiguration config = new HttpConfiguration();
+
+            config.Filters.Clear();
+            config.Filters.Add(new ClientAuthenticationFilter());
+
             config.Routes.MapHttpRoute(
                 name: "RenderApi",
                 routeTemplate: "api/{controller}");
