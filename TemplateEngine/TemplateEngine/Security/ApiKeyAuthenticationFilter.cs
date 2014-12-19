@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Linq;
@@ -18,12 +19,13 @@ namespace TemplateEngine.Security
     /// Implements simple IAuthenticationFilter
     /// See http://www.asp.net/web-api/overview/security/authentication-filters
     /// </summary>
-    public class ClientAuthenticationFilter : IAuthenticationFilter
+    public class ApiKeyAuthenticationFilter : IAuthenticationFilter
     {
         private const string AuthorizationScheme = "AuthorizationKey";
         private const string ApiKeyParameterName = "apikey";
         private static readonly char[] CommaSeparator = {','};
         private static readonly char[] KeyValueSeparator = {'='};
+        private static readonly TraceSource traceSource = new TraceSource("TemplateEngine.Security.ApiKeyAuthenticationFilter");
 
         /// <summary>
         /// Gets or sets a value indicating whether more than one instance of the indicated attribute can be specified for a single program element
@@ -55,14 +57,18 @@ namespace TemplateEngine.Security
             // validate credentials that this filter recognizes
             if (String.IsNullOrEmpty(authorization.Parameter))
             {
-                context.ErrorResult = new AuthenticationFailureResult("Missing credentials", request);
+                var message = "Missing credentials";
+                traceSource.TraceInformation(message);
+                context.ErrorResult = new AuthenticationFailureResult(message, request);
                 return Task.FromResult(0);
             }
             
             var apiKey = ExtractApiKey(authorization.Parameter);
             if (string.IsNullOrWhiteSpace(apiKey))
             {
-                context.ErrorResult = new AuthenticationFailureResult("Missing API key", request);
+                var message = "Missing API key";
+                traceSource.TraceInformation(message);
+                context.ErrorResult = new AuthenticationFailureResult(message, request);
                 return Task.FromResult(0);
             }
 
@@ -70,6 +76,8 @@ namespace TemplateEngine.Security
             var secretApiKey = ConfigurationManager.AppSettings[ApiKeyParameterName];
             if (secretApiKey.Equals(apiKey, StringComparison.OrdinalIgnoreCase))
             {
+                traceSource.TraceInformation("The provided API key is authorized.");
+
                 // if the credentials are valid, set the principle
                 context.Principal = new GenericPrincipal(new GenericIdentity("AuthenticatedUser"), new string[]{"User"} );
             }
@@ -77,6 +85,7 @@ namespace TemplateEngine.Security
             {
                 var message = string.Format(CultureInfo.InvariantCulture,
                                             "Api key \"{0}\" is not one of the authorized keys", apiKey);
+                traceSource.TraceInformation(message);
                 context.ErrorResult = new AuthenticationFailureResult(message, request);
                 return Task.FromResult(0);
             }

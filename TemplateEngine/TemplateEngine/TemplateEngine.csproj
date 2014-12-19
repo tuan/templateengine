@@ -92,7 +92,7 @@
     <Compile Include="Controllers\RenderController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\AuthenticationFailureResult.cs" />
-    <Compile Include="Security\ClientAuthenticationFilter.cs" />
+    <Compile Include="Security\ApiKeyAuthenticationFilter.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

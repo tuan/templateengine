@@ -22,7 +22,7 @@ namespace TemplateEngine
             HttpConfiguration config = new HttpConfiguration();
 
             config.Filters.Clear();
-            config.Filters.Add(new ClientAuthenticationFilter());
+            config.Filters.Add(new ApiKeyAuthenticationFilter());
 
             config.Routes.MapHttpRoute(
                 name: "RenderApi",
