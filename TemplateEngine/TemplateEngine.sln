@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateEngine.Tests", "Tem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHostTemplateEngine", "SelfHostTemplateEngine\SelfHostTemplateEngine.csproj", "{82287223-BA11-427A-879C-C1D99EF686D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{729A595A-18DA-4EBF-9629-DAC80E92495B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{82287223-BA11-427A-879C-C1D99EF686D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82287223-BA11-427A-879C-C1D99EF686D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82287223-BA11-427A-879C-C1D99EF686D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729A595A-18DA-4EBF-9629-DAC80E92495B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729A595A-18DA-4EBF-9629-DAC80E92495B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729A595A-18DA-4EBF-9629-DAC80E92495B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729A595A-18DA-4EBF-9629-DAC80E92495B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
