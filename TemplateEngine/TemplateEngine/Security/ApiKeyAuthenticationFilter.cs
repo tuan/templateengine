@@ -105,7 +105,7 @@ namespace TemplateEngine.Security
             string value;
             if (dict.TryGetValue(ApiKeyParameterName, out value))
             {
-                return value.Replace("\"","");
+                return value.Trim('\'','"');
             }
 
             return null;
