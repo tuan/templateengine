@@ -13,6 +13,11 @@ namespace Common.Logging
             Trace.TraceInformation(message);
         }
 
+        /// <summary>
+        /// Traces information.
+        /// </summary>
+        /// <param name="fmt">String formatter.</param>
+        /// <param name="vars">String formatter's parameters.</param>
         public void Information(string fmt, params object[] vars)
         {
             Trace.TraceInformation(fmt, vars);
