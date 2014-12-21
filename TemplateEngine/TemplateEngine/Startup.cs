@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Common.Logging;
 using Microsoft.Owin;
 using Owin;
 using TemplateEngine.Security;
@@ -22,7 +23,7 @@ namespace TemplateEngine
             HttpConfiguration config = new HttpConfiguration();
 
             config.Filters.Clear();
-            config.Filters.Add(new ApiKeyAuthenticationFilter());
+            config.Filters.Add(new ApiKeyAuthenticationFilter(new Logger()));
 
             config.Routes.MapHttpRoute(
                 name: "RenderApi",
