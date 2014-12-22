@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 using Common.Logging;
 using Microsoft.Owin;
 using Owin;
@@ -23,12 +24,17 @@ namespace TemplateEngine
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
             HttpConfiguration config = new HttpConfiguration();
 
+            var logger = new Logger();
+
             // filters
             config.Filters.Clear();
-            config.Filters.Add(new ApiKeyAuthenticationFilter(new Logger()));
+            config.Filters.Add(new ApiKeyAuthenticationFilter(logger));
 
             // formatters
             config.Formatters.Add(new RenderingDataMediaTypeFormatter());
+
+            // error handling
+            config.Services.Add(typeof(IExceptionLogger), new UnhandledExceptionLogger(logger));
 
             config.Routes.MapHttpRoute(
                 name: "RenderApi",

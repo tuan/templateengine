@@ -97,6 +97,7 @@
     <Compile Include="Security\AuthenticationFailureResult.cs" />
     <Compile Include="Security\ApiKeyAuthenticationFilter.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="UnhandledExceptionLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
