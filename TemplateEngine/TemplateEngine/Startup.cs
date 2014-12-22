@@ -4,6 +4,7 @@ using System.Web.Http;
 using Common.Logging;
 using Microsoft.Owin;
 using Owin;
+using TemplateEngine.Formatters;
 using TemplateEngine.Security;
 
 [assembly: OwinStartup(typeof(TemplateEngine.Startup))]
@@ -22,8 +23,12 @@ namespace TemplateEngine
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
             HttpConfiguration config = new HttpConfiguration();
 
+            // filters
             config.Filters.Clear();
             config.Filters.Add(new ApiKeyAuthenticationFilter(new Logger()));
+
+            // formatters
+            config.Formatters.Add(new RenderingDataMediaTypeFormatter());
 
             config.Routes.MapHttpRoute(
                 name: "RenderApi",
